@@ -284,7 +284,7 @@ export default function AddUser() {
                         </div>
                     </div>
 
-                    <button type='submit' className='btn ml-10'>
+                    <button type='submit' className='btn top-[0%] ml-10'>
                         <span> Save</span>
                     </button>
                 </form>

@@ -17,11 +17,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use("/api/employee", employeeRouter);
-app.use("/api/account", accountRouter);
+app.use("/api/employee", employeeRouter); 
+app.use("/api/account", accountRouter); 
 
 app.use("/public/uploads", express.static("public/uploads"));
-
-mongoose.connect(process.env.DB_URL).then(() => console.log('Database connected successfully')).catch(err => console.log('Database connection error: ', err));
-
+mongoose.connect(process.env.DB_URL);
 module.exports = app;
