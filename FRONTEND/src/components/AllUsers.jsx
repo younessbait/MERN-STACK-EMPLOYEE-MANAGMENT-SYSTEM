@@ -53,11 +53,6 @@ export default function AllUsers() {
         <div className='flex justify-between items-center app w-full h-screen'>
             <div className='flex flex-col justify-center items-center w-[15%] h-screen'>
                 <div className='w-[50%] h-[95%]  flex flex-col justify-around items-center shadow-2xl rounded-2xl  board'>
-                    <div className="mt-[-30%] space-x-10 flex items-center justify-center">
-                        <div className="relative inline-block">
-                            <img src="https://icones.pro/wp-content/uploads/2021/07/icone-d-affaires-et-d-entrepreneurs-orange.png" className="w-14 h-14 rounded-full border-2 border-white bg-white p-0.5" />
-                        </div>
-                    </div>
                     <div className=" flex flex-col justify-center items-center w-full">
                         <Link
                             to={"/AllUsers"}
@@ -65,7 +60,7 @@ export default function AllUsers() {
                         >
                             <FaUsers
                                 size={35}
-                                className=" duration-300  w-full border-l-4 border-orange-500 mb-[50%] text-orange-500 shadow-2xl cursor-pointer"
+                                className=" duration-300  w-full border-l-4 border-[#ff6600] mb-[50%]  text-[#ff6600]  shadow-2xl cursor-pointer"
                             />
                         </Link>
                         <Link
@@ -86,12 +81,13 @@ export default function AllUsers() {
                                 size={35}
                                 className=" w-full  border-l-4 border mb-[50%] text-white shadow-2xl cursor-pointer"
                             />
-                        </Link></div>
-                    <div>
-                        <FaPowerOff onClick={() => {
-                            Auth.logOut();
-                            history.push("/");
-                        }} className=" cursor-pointer text-white " size={35} />
+                        </Link>
+                        <div>
+                            <FaPowerOff onClick={() => {
+                                Auth.logOut();
+                                history.push("/");
+                            }} className=" cursor-pointer text-white " size={35} />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -111,7 +107,7 @@ export default function AllUsers() {
                                     onChange={(e) => setSearch(e.target.value.toUpperCase())}
                                 />
                                 <button
-                                    className='bg-orange-500 hover:bg-orange-500 transition-all text-white text-sm rounded-full px-5 py-2.5 ml-2'
+                                    className='bg-[#ff6600] transition-all text-white text-sm rounded-full px-5 py-2.5 ml-2'
                                     onClick={handleSearch}
                                 >
                                     Search
@@ -119,9 +115,9 @@ export default function AllUsers() {
                             </div>
                         </div>
                         {filteredEmployees.length < 1 ? (
-                            <div className='animate__animated animate__fadeIn mb-[1%]-th   h-[70%] w-[90%] rounded-xl flex justify-center items-center  place-content-center bg-white   '>
-                                <h1 className=' font-bold uppercase tracking-widest text-orange-500'>
-                                    Not Found
+                            <div className='animate__animated animate__fadeIn mb-[1%]-th   h-[70%] w-[90%] rounded-xl flex justify-center items-center  place-content-center bg-transparent   '>
+                                <h1 className=' font-bold uppercase tracking-widest  text-[#ff6600] '>
+                                    Not Found |
                                 </h1>
                             </div>
                         ) : (
@@ -129,22 +125,22 @@ export default function AllUsers() {
                                 <table className='scrollbar-hidden scrollbar-th w-full shadow-2xl rounded-xl bg-white font-sans '>
                                     <thead className='bg-white whitespace-nowrap'>
                                         <tr>
-                                            <th className='px-6 py-3 text-left text-sm font-semibold text-orange-500'>
+                                            <th className='px-6 py-3 text-left text-sm font-semibold  text-[#ff6600] '>
                                                 Avatar
                                             </th>
-                                            <th className='px-6 py-3 text-left text-sm font-semibold text-orange-500'>
+                                            <th className='px-6 py-3 text-left text-sm font-semibold  text-[#ff6600] '>
                                                 CNI
                                             </th>
-                                            <th className='px-6 py-3 text-left text-sm font-semibold text-orange-500 border-5 border-orange-500'>
+                                            <th className='px-6 py-3 text-left text-sm font-semibold  text-[#ff6600]  border-5 border-[#ff6600]'>
                                                 Name
                                             </th>
-                                            <th className='px-6 py-3 text-left text-sm font-semibold text-orange-500 border-5 border-orange-500'>
+                                            <th className='px-6 py-3 text-left text-sm font-semibold  text-[#ff6600]  border-5 border-[#ff6600]'>
                                                 Job
                                             </th>
-                                            <th className='px-6 py-3 text-left text-sm font-semibold text-orange-500 border-5 border-orange-500'>
+                                            <th className='px-6 py-3 text-left text-sm font-semibold  text-[#ff6600]  border-5 border-[#ff6600]'>
                                                 Joined At
                                             </th>
-                                            <th className='flex justify-center items-center px-6 py-3 text-left text-sm font-semibold text-orange-500 border-5 border-orange-500'>
+                                            <th className='flex justify-center items-center px-6 py-3 text-left text-sm font-semibold  text-[#ff6600]  border-5 border-[#ff6600]'>
                                                 Actions
                                             </th>
                                         </tr>
@@ -172,7 +168,7 @@ export default function AllUsers() {
                                                         title='Edit'
                                                     >
                                                         <FaUserEdit
-                                                            className='shadow-2xl text-orange-500'
+                                                            className='shadow-2xl  text-[#ff6600] '
                                                             size={25}
                                                         />
                                                     </Link>
@@ -185,7 +181,7 @@ export default function AllUsers() {
                                                         title='Delete'
                                                     >
                                                         <MdDelete
-                                                            className='shadow-2xl text-orange-500'
+                                                            className='shadow-2xl  text-[#ff6600] '
                                                             size={25}
                                                         />
                                                     </Link>
@@ -195,7 +191,7 @@ export default function AllUsers() {
                                                         title='Show'
                                                     >
                                                         <FaEye
-                                                            className='shadow-2xl text-orange-500'
+                                                            className='shadow-2xl  text-[#ff6600] '
                                                             size={25}
                                                         />
                                                     </Link>

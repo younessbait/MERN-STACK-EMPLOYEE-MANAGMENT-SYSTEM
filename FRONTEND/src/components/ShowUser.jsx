@@ -26,11 +26,6 @@ export default function ShowUser() {
         <div className='flex justify-between items-center app w-full h-screen'>
             <div className='flex flex-col justify-center items-center w-[15%] h-screen'>
                 <div className='w-[50%] h-[95%]  flex flex-col justify-around items-center shadow-2xl rounded-2xl  board'>
-                    <div className=" mt-[-30%] space-x-10 flex items-center justify-center">
-                        <div className="relative inline-block">
-                            <img src="https://icones.pro/wp-content/uploads/2021/07/icone-d-affaires-et-d-entrepreneurs-orange.png" className="w-14 h-14 rounded-full border-2 border-white bg-white p-0.5" />
-                        </div>
-                    </div>
                     <div className=" flex flex-col justify-center items-center w-full">
                         <Link
                             to={"/AllUsers"}
@@ -38,7 +33,7 @@ export default function ShowUser() {
                         >
                             <FaUsers
                                 size={35}
-                                className=" duration-300  w-full border-l-4 border-orange-500 mb-[50%] text-orange-500 shadow-2xl cursor-pointer"
+                                className=" duration-300  w-full border-l-4 border-[#ff6600] mb-[50%] text-[#ff6600] shadow-2xl cursor-pointer"
                             />
                         </Link>
                         <Link
@@ -59,18 +54,18 @@ export default function ShowUser() {
                                 className=" w-full  border-l-4 border mb-[50%] text-white shadow-2xl cursor-pointer"
                             />
                         </Link>
-                    </div>
-                    <div>
-                        <FaPowerOff onClick={() => {
-                            Auth.logOut();
-                            history.push("/");
-                        }} className=" cursor-pointer text-white " size={35} />
+                        <div>
+                            <FaPowerOff onClick={() => {
+                                Auth.logOut();
+                                history.push("/");
+                            }} className=" cursor-pointer text-white " size={35} />
+                        </div>
                     </div>
                 </div>
             </div>
             <div className='flex flex-col justify-center  items-center  w-[100%] h-screen '>
                 <div className=' over scrollbar-th w-[99%] mr-10 h-[94%] board shadow-2xl rounded-2xl  '>
-                    <div className='flex rounded-t-lg bg-top-color sm:px-2 w-full bg-orange-500'>
+                    <div className='flex rounded-t-lg bg-top-color sm:px-2 w-full bg-[#ff6600]'>
                         <div className='animate__animated animate__backInDown border-[8px] border-white h-40 w-40 overflow-hidden sm:rounded-full sm:relative sm:p-0 top-10 left-5 p-3'>
                             <img
                                 src={`http://localhost:3001/public/uploads/${employee.photo}`}
@@ -84,39 +79,39 @@ export default function ShowUser() {
                         </div>
                     </div>
                     <div className='  grid gap-6  md:grid-cols-2   p-5 w-full h-screen '>
-                        <div className=' animate__animated animate__backInLeft  mt-10 col-span-1  bg-orange-500 rounded-lg p-5 h-fit font-bold '>
+                        <div className=' animate__animated animate__backInLeft  mt-10 col-span-1  bg-[#ff6600] rounded-lg p-5 h-fit font-bold '>
                             <span className='capitalize text-white font-normal '>
                                 First name :{" "}
                             </span>{" "}
                             {employee.name}
                         </div>
-                        <div className=' animate__animated animate__backInRight mt-10  col-span-1  bg-orange-500 rounded-lg p-5 h-fit font-bold '>
+                        <div className=' animate__animated animate__backInRight mt-10  col-span-1  bg-[#ff6600] rounded-lg p-5 h-fit font-bold '>
                             <span className='capitalize text-white font-normal '>
                                 Last name :{" "}
                             </span>{" "}
                             {employee.familyName}
                         </div>
-                        <div className='animate__animated animate__backInLeft  col-span-1  bg-orange-500 rounded-lg p-5 h-fit font-bold '>
+                        <div className='animate__animated animate__backInLeft  col-span-1  bg-[#ff6600] rounded-lg p-5 h-fit font-bold '>
                             <span className='capitalize text-white font-normal '>CNI : </span>
                             {employee.cni}
                         </div>
-                        <div className='  animate__animated animate__backInRight col-span-1  bg-orange-500 rounded-lg p-5 h-fit font-bold '>
+                        <div className='  animate__animated animate__backInRight col-span-1  bg-[#ff6600] rounded-lg p-5 h-fit font-bold '>
                             <span className='capitalize text-white font-normal '>
                                 Phone number :{" "}
                             </span>{" "}
                             {employee.phone}
                         </div>
-                        <div className=' animate__animated animate__backInLeft col-span-1  bg-orange-500 rounded-lg p-5 h-fit font-bold '>
+                        <div className=' animate__animated animate__backInLeft col-span-1  bg-[#ff6600] rounded-lg p-5 h-fit font-bold '>
                             <span className='v text-white font-normal '>Jop : </span>{" "}
                             {employee.job}
                         </div>
-                        <div className=' animate__animated animate__backInRight col-span-1  bg-orange-500 rounded-lg p-5 h-fit font-bold '>
+                        <div className=' animate__animated animate__backInRight col-span-1  bg-[#ff6600] rounded-lg p-5 h-fit font-bold '>
                             <span className='text-white font-normal capitalize'>
                                 date join :{" "}
                             </span>{" "}
                             {employee.dateInscription}
                         </div>
-                        <div className=' animate__animated animate__backInLeft  col-span-1  bg-orange-500 rounded-lg p-5 h-fit font-bold '>
+                        <div className=' animate__animated animate__backInLeft  col-span-1  bg-[#ff6600] rounded-lg p-5 h-fit font-bold '>
                             <span className='capitalize text-white font-normal '>
                                 address :{" "}
                             </span>

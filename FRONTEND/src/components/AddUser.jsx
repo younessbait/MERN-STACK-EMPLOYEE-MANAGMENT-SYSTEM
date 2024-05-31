@@ -54,11 +54,6 @@ export default function AddUser() {
         <div className='flex justify-between items-center app w-full h-screen'>
             <div className='flex flex-col justify-center items-center w-[15%] h-screen'>
                 <div className='w-[50%] h-[95%]  flex flex-col justify-around items-center shadow-2xl rounded-2xl  board'>
-                    <div className="mt-[-30%] space-x-10 flex items-center justify-center">
-                        <div className="relative inline-block">
-                            <img src="https://icones.pro/wp-content/uploads/2021/07/icone-d-affaires-et-d-entrepreneurs-orange.png" className="w-14 h-14 rounded-full border-2 border-white bg-white p-0.5" />
-                        </div>
-                    </div>
                     <div className=" flex flex-col justify-center items-center w-full">
                         <Link
                             to={"/AllUsers"}
@@ -75,7 +70,7 @@ export default function AddUser() {
                         >
                             <FaAddressCard
                                 size={35}
-                                className=" duration-300  w-full border-l-4 border-orange-500 mb-[50%] text-orange-500 shadow-2xl cursor-pointer"
+                                className=" duration-300  w-full border-l-4 border-[#ff6600] mb-[50%] text-[#ff6600] shadow-2xl cursor-pointer"
                             />
                         </Link>
 
@@ -88,13 +83,14 @@ export default function AddUser() {
                                 className=" w-full  border-l-4 border mb-[50%] text-white shadow-2xl cursor-pointer"
                             />
                         </Link>
+                        <div>
+                            <FaPowerOff onClick={() => {
+                                Auth.logOut();
+                                history.push("/");
+                            }} className=" cursor-pointer text-white " size={35} />
                         </div>
-                    <div>
-                        <FaPowerOff onClick={() => {
-                            Auth.logOut();
-                            history.push("/");
-                        }} className=" cursor-pointer text-white " size={35} />
                     </div>
+
                 </div>
             </div>
             <div className='flex flex-col justify-center  items-center  w-[100%] h-screen  '>
@@ -104,15 +100,15 @@ export default function AddUser() {
                             <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
                         </svg>
                         <span className="sr-only">Info</span>
-                        <div>
-                            <span className="font-medium">Danger alert!</span> An error occurred. Please try again later.
+                        <div className="mr-5">
+                            <span className="font-medium ">Danger alert!</span> An error occurred. Please try again later.
                         </div>
                         <button
                             type='button'
                             onClick={() => {
                                 seter(!er);
                             }}
-                            className='ms-auto -mx-1.5 -my-1.5 ml-5 text-red-500 rounded-lg focus:ring-2 focus:ring-red-500 p-1.5 bg-red-200 inline-flex items-center justify-center h-8 w-8'
+                            className='ms-auto  -mx-1.5 -my-1.5  text-red-500 rounded-lg focus:ring-2 focus:ring-red-500 p-1.5 bg-red-200 inline-flex items-center justify-center h-8 w-8'
                             data-dismiss-target='#alert-border-2'
                             aria-label='Close'
                         >
@@ -146,7 +142,7 @@ export default function AddUser() {
                         <div className=' my-2 ml-10'>
                             <label
                                 htmlFor='first_name'
-                                className='flex    items-center mb-2 text-sm font-medium  text-orange-500 '
+                                className='flex    items-center mb-2 text-sm font-medium  text-[#ff6600] '
                             >
                                 First name
                             </label>
@@ -155,7 +151,7 @@ export default function AddUser() {
                                 id='first_name'
                                 value={name}
                                 onChange={(e) => setname(e.target.value)}
-                                className=' outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3.5  '
+                                className=' outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   block w-full p-3.5  '
                                 placeholder='first_name'
                                 required
                             />
@@ -163,7 +159,7 @@ export default function AddUser() {
                         <div className='my-2 mr-10'>
                             <label
                                 htmlFor='last_name'
-                                className='flex    items-center mb-2 text-sm font-medium  text-orange-500 '
+                                className='flex    items-center mb-2 text-sm font-medium  text-[#ff6600] '
                             >
                                 Family name
                             </label>
@@ -172,7 +168,7 @@ export default function AddUser() {
                                 id='family_name'
                                 value={familyName}
                                 onChange={(e) => setfamilyName(e.target.value)}
-                                className='outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3.5  '
+                                className='outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   block w-full p-3.5  '
                                 placeholder='last_name'
                                 required
                             />
@@ -180,7 +176,7 @@ export default function AddUser() {
                         <div className='my-2 ml-10'>
                             <label
                                 htmlFor='cni'
-                                className='flex    items-center mb-2 text-sm font-medium  text-orange-500 '
+                                className='flex    items-center mb-2 text-sm font-medium  text-[#ff6600] '
                             >
                                 <FaIdCard className=' mr-5 ' size={20} />
                                 cni
@@ -190,7 +186,7 @@ export default function AddUser() {
                                 id='cni'
                                 value={cni}
                                 onChange={(e) => setcni(e.target.value)}
-                                className=' outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3.5  '
+                                className=' outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   block w-full p-3.5  '
                                 placeholder='cni'
                                 required
                             />
@@ -198,7 +194,7 @@ export default function AddUser() {
                         <div className='my-2 mr-10'>
                             <label
                                 htmlFor='phone'
-                                className='flex    items-center mb-2 text-sm font-medium  text-orange-500 '
+                                className='flex    items-center mb-2 text-sm font-medium  text-[#ff6600] '
                             >
                                 <FaPhoneAlt className='  mr-5 ' size={20} />
                                 phone number
@@ -208,7 +204,7 @@ export default function AddUser() {
                                 id='phone'
                                 value={phone}
                                 onChange={(e) => setphone(e.target.value)}
-                                className='outline-none  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3.5  '
+                                className='outline-none  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   block w-full p-3.5  '
                                 placeholder='(+212) 767 672 175	'
                                 required
                             />
@@ -216,7 +212,7 @@ export default function AddUser() {
                         <div className=' my-2 ml-10'>
                             <label
                                 htmlFor='jop'
-                                className='flex   items-center mb-2 text-sm font-medium  text-orange-500 '
+                                className='flex   items-center mb-2 text-sm font-medium  text-[#ff6600] '
                             >
                                 <FaUserTie className='  mr-5 ' size={20} />
                                 Jop
@@ -226,7 +222,7 @@ export default function AddUser() {
                                 id='jop'
                                 value={job}
                                 onChange={(e) => setjob(e.target.value)}
-                                className='outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3.5  '
+                                className='outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   block w-full p-3.5  '
                                 placeholder='Jop'
                                 required
                             />
@@ -234,7 +230,7 @@ export default function AddUser() {
                         <div className='my-2 mr-10'>
                             <label
                                 htmlFor='date'
-                                className='flex    items-center mb-2 text-sm font-medium  text-orange-500 '
+                                className='flex    items-center mb-2 text-sm font-medium  text-[#ff6600] '
                             >
                                 <MdDateRange className='  mr-5 ' size={20} />
                                 Date Inscription
@@ -244,7 +240,7 @@ export default function AddUser() {
                                 id='date'
                                 value={dateInscription}
                                 onChange={(e) => setdateInscription(e.target.value)}
-                                className='bg-gray-50 outline-none border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3.5  '
+                                className='bg-gray-50 outline-none border border-gray-300 text-gray-900 text-sm rounded-lg   block w-full p-3.5  '
                                 placeholder=''
                                 required
                             />
@@ -254,7 +250,7 @@ export default function AddUser() {
                         <div className=' my-2 ml-10'>
                             <label
                                 htmlFor='address'
-                                className='flex   items-center mb-2 text-sm font-medium  text-orange-500 '
+                                className='flex   items-center mb-2 text-sm font-medium  text-[#ff6600] '
                             >
                                 <FaLocationDot className='  mr-5 ' size={20} />
                                 Address
@@ -264,7 +260,7 @@ export default function AddUser() {
                                 id='address'
                                 value={address}
                                 onChange={(e) => setaddress(e.target.value)}
-                                className='bg-gray-50 border outline-none  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3.5  '
+                                className='bg-gray-50 border outline-none  border-gray-300 text-gray-900 text-sm rounded-lg   block w-full p-3.5  '
                                 placeholder='address'
                                 required
                             />
@@ -272,7 +268,7 @@ export default function AddUser() {
                         <div className='my-2 mr-10'>
                             <label
                                 htmlFor='photo'
-                                className='flex    items-center mb-2 text-sm font-medium  text-orange-500 '
+                                className='flex    items-center mb-2 text-sm font-medium  text-[#ff6600] '
                             >
                                 <MdAddAPhoto className='  mr-5 ' size={20} />
                                 photo
@@ -280,7 +276,7 @@ export default function AddUser() {
                             <input
                                 type='file'
                                 id='photo'
-                                className='outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3.5  '
+                                className='outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   block w-full p-3.5  '
                                 placeholder='photo'
                                 required
                                 onChange={(e) => setphoto(e.target.files[0])}

@@ -61,11 +61,6 @@ export default function Chart() {
         <div className='flex justify-between items-center app w-full h-screen'>
             <div className='flex flex-col justify-center items-center w-[15%] h-screen'>
                 <div className='w-[50%] h-[95%]  flex flex-col justify-around items-center shadow-2xl rounded-2xl  board'>
-                    <div className="mt-[-30%] space-x-10 flex items-center justify-center">
-                        <div className="relative inline-block">
-                            <img src="https://icones.pro/wp-content/uploads/2021/07/icone-d-affaires-et-d-entrepreneurs-orange.png" className="w-14 h-14 rounded-full border-2 border-white bg-white p-0.5" />
-                        </div>
-                    </div>
                     <div className=" flex flex-col justify-center items-center w-full">
                         <Link
                             to={"/AllUsers"}
@@ -92,15 +87,15 @@ export default function Chart() {
                         >
                             <FaChartPie
                                 size={35}
-                                className=" duration-300  w-full border-l-4 border-orange-500 mb-[50%] text-orange-500 shadow-2xl cursor-pointer"
+                                className=" duration-300  w-full border-l-4 border-[#ff6600] mb-[50%] text-[#ff6600] shadow-2xl cursor-pointer"
                             />
                         </Link>
-                    </div>
-                    <div>
-                        <FaPowerOff onClick={() => {
-                            Auth.logOut();
-                            history.push("/");
-                        }} className=" cursor-pointer text-white " size={35} />
+                        <div>
+                            <FaPowerOff onClick={() => {
+                                Auth.logOut();
+                                history.push("/");
+                            }} className=" cursor-pointer text-white " size={35} />
+                        </div>
                     </div>
                 </div>
             </div>

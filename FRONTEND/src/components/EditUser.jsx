@@ -67,11 +67,6 @@ export default function EditUser() {
         <div className='flex justify-between items-center app w-full h-screen'>
             <div className='flex flex-col justify-center items-center w-[15%] h-screen'>
                 <div className='w-[50%] h-[95%]  flex flex-col justify-around items-center shadow-2xl rounded-2xl  board'>
-                    <div className="mt-[-30%] space-x-10 flex items-center justify-center">
-                        <div className="relative inline-block">
-                            <img src="https://icones.pro/wp-content/uploads/2021/07/icone-d-affaires-et-d-entrepreneurs-orange.png" className="w-14 h-14 rounded-full border-2 border-white bg-white p-0.5" />
-                        </div>
-                    </div>
                     <div className=" flex flex-col justify-center items-center w-full">
                         <Link
                             to={"/AllUsers"}
@@ -79,7 +74,7 @@ export default function EditUser() {
                         >
                             <FaUsers
                                 size={35}
-                                className=" duration-300  w-full border-l-4 border-orange-500 mb-[50%] text-orange-500 shadow-2xl cursor-pointer"
+                                className=" duration-300  w-full border-l-4 border-[#ff6600] mb-[50%] text-[#ff6600] shadow-2xl cursor-pointer"
                             />
                         </Link>
                         <Link
@@ -101,13 +96,13 @@ export default function EditUser() {
                                 className=" w-full  border-l-4 border mb-[50%] text-white shadow-2xl cursor-pointer"
                             />
                         </Link>
+                        <div>
+                            <FaPowerOff onClick={() => {
+                                Auth.logOut();
+                                history.push("/");
+                            }} className=" cursor-pointer text-white " size={35} />
                         </div>
-                    <div>
-                        <FaPowerOff onClick={() => {
-                            Auth.logOut();
-                            history.push("/");
-                        }} className=" cursor-pointer text-white " size={35} />
-                    </div>
+                        </div>
                 </div>
             </div>
             <div className='flex flex-col justify-center  items-center  w-[100%] h-screen  '>
@@ -167,7 +162,7 @@ export default function EditUser() {
                         <div className=' my-2 ml-10'>
                             <label
                                 htmlFor='first_name'
-                                className='flex    items-center mb-2 text-sm font-medium  text-orange-500 '
+                                className='flex    items-center mb-2 text-sm font-medium  text-[#ff6600] '
                             >
                                 First name
                             </label>
@@ -184,7 +179,7 @@ export default function EditUser() {
                         <div className='my-2 mr-10'>
                             <label
                                 htmlFor='last_name'
-                                className='flex    items-center mb-2 text-sm font-medium  text-orange-500 '
+                                className='flex    items-center mb-2 text-sm font-medium  text-[#ff6600] '
                             >
                                 Family name
                             </label>
@@ -201,7 +196,7 @@ export default function EditUser() {
                         <div className='my-2 ml-10'>
                             <label
                                 htmlFor='cni'
-                                className='flex    items-center mb-2 text-sm font-medium  text-orange-500 '
+                                className='flex    items-center mb-2 text-sm font-medium  text-[#ff6600] '
                             >
                                 <FaIdCard className=' mr-5 ' size={20} />
                                 cni
@@ -219,7 +214,7 @@ export default function EditUser() {
                         <div className='my-2 mr-10'>
                             <label
                                 htmlFor='phone'
-                                className='flex    items-center mb-2 text-sm font-medium  text-orange-500 '
+                                className='flex    items-center mb-2 text-sm font-medium  text-[#ff6600] '
                             >
                                 <FaPhoneAlt className='  mr-5 ' size={20} />
                                 phone number
@@ -237,7 +232,7 @@ export default function EditUser() {
                         <div className=' my-2 ml-10'>
                             <label
                                 htmlFor='jop'
-                                className='flex   items-center mb-2 text-sm font-medium  text-orange-500 '
+                                className='flex   items-center mb-2 text-sm font-medium  text-[#ff6600] '
                             >
                                 <FaUserTie className='  mr-5 ' size={20} />
                                 Jop
@@ -255,7 +250,7 @@ export default function EditUser() {
                         <div className='my-2 mr-10'>
                             <label
                                 htmlFor='date'
-                                className='flex    items-center mb-2 text-sm font-medium  text-orange-500 '
+                                className='flex    items-center mb-2 text-sm font-medium  text-[#ff6600] '
                             >
                                 <MdDateRange className='  mr-5 ' size={20} /> Date Join
                             </label>
@@ -274,7 +269,7 @@ export default function EditUser() {
                         <div className=' my-2 ml-10'>
                             <label
                                 htmlFor='address'
-                                className='flex   items-center mb-2 text-sm font-medium  text-orange-500 '
+                                className='flex   items-center mb-2 text-sm font-medium  text-[#ff6600] '
                             >
                                 <FaLocationDot className='  mr-5 ' size={20} />
                                 Address
@@ -292,7 +287,7 @@ export default function EditUser() {
                         <div className=' my-2 mr-10'>
                             <label
                                 htmlFor='photo'
-                                className='flex    items-center mb-2 text-sm font-medium  text-orange-500 '
+                                className='flex    items-center mb-2 text-sm font-medium  text-[#ff6600] '
                             >
                                 <MdAddAPhoto className='  mr-5 ' size={20} />
                                 photo
