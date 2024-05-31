@@ -24,7 +24,6 @@ app.use("/public/uploads", express.static("public/uploads"));
 
 mongoose.connect(process.env.DB_URL, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
 }).then(() => console.log('Database connected successfully')).catch(err => console.log('Database connection error: ', err));
 
 module.exports = app;
